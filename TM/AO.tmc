@@ -1,0 +1,5 @@
+TM 1 Hz AO16 ILTETSt; Address ILTETSt 0x400;
+TM 1 Hz AO16 IDPVTSt; Address IDPVTSt 0x406;
+TM 1 Hz AO16 ICelTSt; Address ICelTSt 0x408;
+TM 1 Hz AO16 IHeatBlkTSt; Address IHeatBlkTSt 0x40A;
+TM 1 Hz AO16 ICelPSt; Address ICelPSt 0x40C;

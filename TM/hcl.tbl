@@ -1,0 +1,125 @@
+QCLI {
+  HBox { +-; Title: "QCLI"; -+ };
+  Wave: HBox { (QCLI_Wave,10); HGlue 0+1 };
+  Mode: { (QCLI_mode,7) (QCLI_laser,3)
+          Stale: (QCLI_Stale,5) };
+  SSP { (SSP_Num,8) (SSP_Status,7); }
+}
+
+SSP {
+  HBox { +-; Title: "SSP"; -+ };
+  HBox {
+    { File: (SSP_Num,8);
+      Scan: (SSP_SN,8);
+      Skip: (SSP_TS,8);
+      Stale: (SSP_Stale,5);
+    }; +|; {
+      ""  >"1|2|3 ";
+      AD: (SSP_AD,5);
+      PA: (SSP_PA,5);
+      CA: (SSP_CA,5);
+    }
+  }
+}
+
+SSP_T {
+  { HBox { +-; Title: "SSP Temps"; -+ };
+    { FPGA: (SSP_T_FPGA,6) C HtSink: (SSP_T_HtSink,6) C };
+    BrdT: (ISSPT,7) C
+  }
+}
+
+QCLI_S {
+  HBox { +-; Title: "QCLI Status"; -+ };
+  HBox {
+    {
+      Rdy:     (QCLI_ready,3);
+      Busy:    (QCLI_busy,3);
+      Sel:     (QCLI_waveerr,4);
+      Flsh:    (QCLI_flash,2);
+      Cksm:    (QCLI_cksum,1);
+    }; |; {
+      "DOT:"   (QCLI_dot,4);
+      "LOT:"   (QCLI_lot,4);
+      "LOC:"   (QCLI_loc,4);
+      "COR:"   (QCLI_cordte,4);
+      "CErr:"  (QCLI_cmderr,4);
+    }; |; {
+      Com:  (QCLI_present,4);
+      Act:  (QCLI_rw,2);
+      FIFO: (QCLI_fifodep,3);
+      Err:  (QCLI_err,2);
+    }
+  }
+}
+
+LPV {
+  HBox { +-; Title: "Laser Signals"; -+ };
+  T1:     (ILPV_T1C,7) C;
+  T2:     (ILPV_T2C,7) C;
+  RH:     (ILPV_RHC,7) %;
+  P:      (ILPV_P,7) Torr;
+  S:      (ILPV_PTRHS,7) ;
+  LHT:    (ILH_T,7) C;
+  LPVCT:  (ILPVCT,7) C;
+  LTECCT: (ILTE7R7T,7) C;
+  LTECST: (ILTETSt,7) C;
+  LasI:   (ILasI,7) ;
+}
+
+Cel {
+  HBox { +-; Title: "Cell"; -+};
+  T1:     (ICel1T,7) C;
+  T2:     (ICel2T,7) C;
+  CelCT:  (ICelCT,7) C;
+  CelTSt: (ICelTSt,7) C;
+  CelP:   (ICelP,7) ;
+  CelPSt: (ICelPSt,7) ;
+}
+  
+DPV {
+  HBox { +-; Title: "Detector Signals"; -+ };
+  T1:     (IDPV_T1C,7) C;
+  T2:     (IDPV_T2C,7) C;
+  RH:     (IDPV_RHC,7) %;
+  P:      (IDPV_P,7) Torr;
+  S:      (IDPV_PTRHS,7) ;
+  DPVCT:  (IDPVCT,7) C;
+  DPVTSt: (IDPVTSt,7) C;
+  DetT:   (IDetT,7) C;
+} 
+
+DACS_RAM_DISK {
+  HBox { +-; Title: "DACS and RAM and Disk"; -+;};
+  Freemem:  (Freemem,7) MB; 
+  Disk:     (Disk,7) % ;
+  DACS_T1:  (DACS_T1C,7) C;
+  DACS_T2:  (DACS_T2C,7) C;
+  DACS_RH:  (DACS_RHC,7) %;
+  DACS_P:   (DACS_P,7) Torr;
+  DACS_S:   (DACS_PTRHS,7);
+}
+
+
+TS {
+  HBox { +-; Title: "Temp Sensors"; -+;};
+  ""        Temp       Cnt;
+  "0"       (TS0_T,7)  (TS0_cnt,5); 
+  "1"       (TS1_T,7)  (TS1_cnt,5); 
+  "2"       (TS2_T,7)  (TS2_cnt,5); 
+  "3"       (TS3_T,7)  (TS3_cnt,5); 
+  "4"       (TS4_T,7)  (TS4_cnt,5); 
+  "5"       (TS5_T,7)  (TS5_cnt,5); 
+}
+
+PUMP{
+  HBox { +-; Title: "Pump Signals"; -+;};
+  PmpMtrT:    (IPMtT,7) C;
+  PmpT:       (IPmpT,7) C;
+}  
+
+{
+  HBox {{ [QCLI]; [SSP]; [SSP_T]; [QCLI_S]}; |; {HBox { [LPV]; |;{ [Cel]; [PUMP]}; |; [DPV]}; HBox {[TS]; |; [DACS_RAM_DISK]}}}; 
+  -;
+  { Time: (flttime,8) MFCtr: (MFCtr,5) CPU Usage: (CPU_Pct,3) % CPU Temp: (vl_cpuT,3) C Brd Temp: (vl_bdT,3) C}
+} 

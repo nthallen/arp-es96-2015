@@ -1,0 +1,5 @@
+display hcldisp -C $FlightNode
+client hclclt
+batchfile interact
+memo
+phrtg
