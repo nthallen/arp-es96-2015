@@ -49,6 +49,7 @@ QCLI_S {
       Act:  (QCLI_rw,2);
       FIFO: (QCLI_fifodep,3);
       Err:  (QCLI_err,2);
+      Rst:  (QCLI_Reset,3);
     }
   }
 }
@@ -69,8 +70,8 @@ LPV {
 
 Cel {
   HBox { +-; Title: "Cell"; -+};
-  T1:     (ICel1T,7) C;
-  T2:     (ICel2T,7) C;
+  TS4_T:     (TS4_T,7) C;
+  TS5_T:     (TS5_T,7) C;
   CelCT:  (ICelCT,7) C;
   CelTSt: (ICelTSt,7) C;
   CelP:   (ICelP,7) ;
@@ -103,13 +104,13 @@ DACS_RAM_DISK {
 
 TS {
   HBox { +-; Title: "Temp Sensors"; -+;};
-  ""        Temp       Cnt;
-  "0"       (TS0_T,7)  (TS0_cnt,5); 
-  "1"       (TS1_T,7)  (TS1_cnt,5); 
-  "2"       (TS2_T,7)  (TS2_cnt,5); 
-  "3"       (TS3_T,7)  (TS3_cnt,5); 
-  "4"       (TS4_T,7)  (TS4_cnt,5); 
-  "5"       (TS5_T,7)  (TS5_cnt,5); 
+  ""        >Temp<    ""       >Cnt<;
+  "0"       (TS0_T,7) C        (TS0_cnt,5); 
+  "1"       (TS1_T,7) C        (TS1_cnt,5); 
+  "2"       (TS2_T,7) C        (TS2_cnt,5); 
+  "3"       (TS3_T,7) C        (TS3_cnt,5); 
+  "4"       (TS4_T,7) C        (TS4_cnt,5); 
+  "5"       (TS5_T,7) C        (TS5_cnt,5); 
 }
 
 PUMP{
@@ -118,8 +119,39 @@ PUMP{
   PmpT:       (IPmpT,7) C;
 }  
 
+INLET{
+  HBox {+-; Title: "Inlet Signals"; -+;};
+  TS2_T:      (TS2_T,7) C;
+  TS3_T:      (TS3_T,7) C;
+  IHeatBlkCT: (IHeatBlkCT,7) C;
+  IHeatBlkTSt:(IHeatBlkTSt,7) C;
+}
+
+HSKEEP{
+  HBox { +-; Title: "Housekeeping Signals"; -+;};
+  SkinT1: (ISk1T,7) C SkinT2: (ISk2T,7) C;
+  SkinT3: (ISk3T,7) C;
+  RovT1:  (IRv1T,7) C RovT2:  (IRv2T,7) C;  
+  RovT3:  (IRv3T,7) C RovT4:  (IRv4T,7) C;  
+  RovT5:  (IRv5T,7) C;  
+}
+
 {
-  HBox {{ [QCLI]; [SSP]; [SSP_T]; [QCLI_S]}; |; {HBox { [LPV]; |;{ [Cel]; [PUMP]}; |; [DPV]}; HBox {[TS]; |; [DACS_RAM_DISK]}}}; 
+  HBox {
+    { [QCLI];
+      [SSP];
+      [SSP_T];
+      [QCLI_S]
+    }; |; {
+      HBox {
+        {[LPV]; [INLET]}; |; {
+          HBox{ {[Cel]; [PUMP]}; |; [DPV] };
+          [HSKEEP]
+        }
+      };
+      HBox {[TS]; |; [DACS_RAM_DISK]}
+    } 
+  };
   -;
   { Time: (flttime,8) MFCtr: (MFCtr,5) CPU Usage: (CPU_Pct,3) % CPU Temp: (vl_cpuT,3) C Brd Temp: (vl_bdT,3) C}
 } 

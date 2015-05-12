@@ -6,4 +6,13 @@ if (last_SSP != SSP_Num) {
   ci_sendfcmd(2, "PhRTG File SSP %lu\n", SSP_Num );
   last_SSP = SSP_Num;
 }
-
+ci_sendfcmd(2, "PhRTG Datum Cell_T %lu %.3lf %.3lf\n",
+  itime(), convert(TS4_T), convert(TS5_T));
+ci_sendfcmd(2, "PhRTG Datum SG_T %lu %.3lf %.3lf\n",
+  itime(), convert(TS2_T), convert(TS3_T));
+ci_sendfcmd(2, "PhRTG Datum ISk_T %lu %.2lf %.2lf %.2lf\n",
+  itime(), convert(ISk1T), convert(ISk2T), convert(ISk3T));
+ci_sendfcmd(2, "PhRTG Datum IRv_T %lu %.2lf %.2lf %.2lf %.2lf\n",
+  itime(), convert(IRv1T), convert(IRv2T), convert(IRv3T), convert(IRv4T));
+ci_sendfcmd(2, "PhRTG Datum vl_bdT %lu %s\n", itime(), text(vl_bdT));
+ci_sendfcmd(2, "PhRTG Datum vl_cpuT %lu %s\n", itime(), text(vl_cpuT));

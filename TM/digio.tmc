@@ -1,0 +1,3 @@
+TM typedef unsigned char DStat {
+  text "%02X"; collect x = sbrba(x.address); }
+TM 1 Hz DStat DS855; Address DS855 0x855;

@@ -7,7 +7,7 @@
 # Verify and/or Program QCLIs
   qclidprog -h QCLI -d0 -cwcwc $TMBINDIR/waves.out
 
-# Launch dccc   dccc -f $TMBINDIR/digio.dccc
+  Launch dccc   dccc -f $TMBINDIR/digio.dccc
   Launch DG/cmd hclcol
   Launch cmd/server hclsrvr
   Launch - lgr -N `mlf_find LOG`

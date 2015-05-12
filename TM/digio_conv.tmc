@@ -1,0 +1,2 @@
+off_on_t QCLI_Reset; invalidate QCLI_Reset;
+  { QCLI_Reset = (DS855 >> 0) & 1; Validate QCLI_Reset; }

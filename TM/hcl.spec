@@ -13,6 +13,8 @@ tmcbase = /usr/local/share/huarp/ptrhm.cc
 tmcbase = freememdef.tmc
 tmcbase = qcli.tmc
 tmcbase = TS_T_t_cal.tmc
+tmcbase = digio.tmc
+tmcbase = T30K75KU.tmc
 
 colbase = AI_col.tmc
 #colbase = AO_col.tmc
@@ -24,6 +26,7 @@ colbase = /usr/local/share/huarp/freemem_col.tmc
 colbase = /usr/local/share/huarp/ptrhm_col.cc
 colbase = /usr/local/share/huarp/tmdf_col.tmc
 colbase = qcli_col.tmc
+colbase = PTRH_col.tmc
 
 cmdbase = /usr/local/share/huarp/root.cmd
 cmdbase = /usr/local/share/huarp/DACS_AI.cmd
@@ -32,15 +35,22 @@ cmdbase = /usr/local/share/huarp/phrtg.cmd
 cmdbase = /usr/local/share/huarp/qcli.cmd
 cmdbase = AO.cmd
 cmdbase = qclis.cmd
+cmdbase = digio.cmd
 
 qclibase = waves.qcli
 
-SCRIPT = interact Experiment.config
+SCRIPT = interact Experiment.config digio.dccc
 TGTDIR = $(TGTNODE)/home/hcl
 
 hclcol : -lsubbus
 hclsrvr : -lsubbus
 hclalgo : hcl.tma
-hcldisp : temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc hcl.tbl \
-          SSPrtg.tmc /usr/local/share/oui/cic.oui
+hcldisp : temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc digio_conv.tmc \
+          hcl.tbl SSPrtg.tmc /usr/local/share/oui/cic.oui
+hclengext : temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc hcleng.cdf
 doit : hcl.doit
+
+%%
+
+hcleng.cdf : genui.txt
+	genui -d ../eng -c genui.txt
