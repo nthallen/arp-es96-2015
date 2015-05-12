@@ -1,0 +1,127 @@
+HEADER ES96 HCl Instrument
+MNEMONIC HCl
+HOMEDIR HCl_Data_Dir
+  1 CPU_Pct   DACS CPU
+  1 Disk      DACS Disk
+  1 freemem   DACS RAM
+  1 vl_bdT    DACS T
+  1 vl_cpuT   DACS T
+  
+  1 DACS_P     DACS P
+  1 DACS_PTRHS DACS PTRHS
+  1 DACS_RHC   DACS RH
+  1 DACS_T1C   DACS T
+  1 DACS_T2C   DACS T
+# 4 MFCtr
+# 4 Synch
+
+  1 IHeatBlkTSt Inlet Control
+  1 IHeatBlkCT  Inlet Control # RadInT
+# 1 ISG1T
+# 1 ISG2T
+  1 TS2_T Inlet T
+  1 TS3_T Inlet T
+
+  1 TS4_T   Cell T
+  1 TS5_T   Cell T
+  1 ICelP   Cell P
+  1 ICelPSt Cell PControl
+  1 ICelTSt Cell TControl
+  1 ICelCT  Cell TControl
+
+  1 IDetT   DPV  T
+  1 IDPVCT  DPV  TControl
+  1 IDPVTSt DPV  TControl
+  1 IDPV_P  DPV  P
+  1 IDPV_PTRHS DPV PTRHS
+  1 IDPV_RHC DPV RH
+  1 IDPV_T1C DPV T
+  1 IDPV_T2C DPV T
+
+  1 ILPVCT
+  1 ILPV_P
+  1 ILPV_PTRHS
+  1 ILPV_RHC
+  1 ILPV_T1C
+  1 ILPV_T2C
+
+  1 ILTE7R7T
+  1 ILH_T
+  1 ILTETSt
+  1 ILasI
+
+  1 IPMtT
+  1 IPmpT
+  1 IRv1T
+  1 IRv2T
+  1 IRv3T
+  1 IRv4T
+  1 IRv5T
+  1 ISk1T
+  1 ISk2T
+  1 ISk3T
+
+# 1 QCLI_CS
+  1 QCLI_Stale
+  1 QCLI_Wave
+  1 QCLI_err
+  1 QCLI_fifodep
+  1 QCLI_flash
+  1 QCLI_mode
+  1 QCLI_rw
+# 1 QCLI_s
+  1 QCLI_present:QCLI_CS:11
+  1 QCLI_laser:QCLI_s:12
+  1 QCLI_cordte:QCLI_s:11 # qcli_conv.tmc
+  1 QCLI_cmderr:QCLI_s:13 # qcli_conv.tmc
+  1 QCLI_cksum:QCLI_s:14 # qcli_conv.tmc
+  1 QCLI_busy:QCLI_s:15 # qcli_conv.tmc
+  1 QCLI_loc:QCLI_s:3 # qcli_conv.tmc
+  1 QCLI_lot:QCLI_s:4 # qcli_conv.tmc
+  1 QCLI_dot:QCLI_s:5 # qcli_conv.tmc
+  1 QCLI_waveerr:QCLI_s:8 # qcli_conv.tmc
+  1 QCLI_ready:QCLI_s:9 # qcli_conv.tmc
+# 1 SSP_Flags
+  1 CAOVF1:SSP_Flags:0 SSP Overflow
+  1 CAOVF2:SSP_Flags:1 SSP Overflow
+  1 CAOVF3:SSP_Flags:2 SSP Overflow
+  1 PAOVF1:SSP_Flags:3 SSP Overflow
+  1 PAOVF2:SSP_Flags:4 SSP Overflow
+  1 PAOVF3:SSP_Flags:5 SSP Overflow
+  1 ADOVF1:SSP_Flags:6 SSP Overflow
+  1 ADOVF2:SSP_Flags:7 SSP Overflow
+  1 ADOVF3:SSP_Flags:8 SSP Overflow
+  1 SSP_Num
+  1 SSP_SN
+  1 SSP_Status
+  1 SSP_Stale
+  1 SSP_TS
+
+  1 SSP_T_FPGA
+  1 SSP_T_HtSink
+  1 ISSPT
+  1 IPampT
+
+  1 Sp6AI
+  1 Sp7AI
+  1 Sp8AI
+  1 SpAI9
+
+  1 TS0_T
+  1 TS0_cnt
+# 1 TS0_raw
+  1 TS1_T
+  1 TS1_cnt
+# 1 TS1_raw
+  1 TS2_T
+  1 TS2_cnt
+# 1 TS2_raw
+  1 TS3_T
+  1 TS3_cnt
+# 1 TS3_raw
+  1 TS4_T
+  1 TS4_cnt
+# 1 TS4_raw
+  1 TS5_T
+  1 TS5_cnt
+# 1 TS5_raw
