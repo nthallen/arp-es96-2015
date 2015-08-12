@@ -1,6 +1,7 @@
 TM typedef double VOLTS { text "%6.3lf"; }
 TM typedef double mVOLTS { text "%6.3lf"; }
 TM typedef double AMPS  { text "%6.3lf"; }
+TM typedef double TORR { text "%6.2lf"; }
 TM typedef unsigned short UINT { text "%5d"; }
 TM typedef   signed short AI16 {
   text "%7.4lf";
@@ -91,3 +92,9 @@ TM typedef signed long TS_raw_t;
 TM typedef unsigned short TS_cnt_t { text "%5u"; }
 TM typedef double TS_T_t { text "%7.2lf"; convert CELCIUS; }
 TM typedef AI16 AI_T30K { text "%7.2lf"; convert CELCIUS; }
+TM typedef AI16 AI_500Torr { text "%6.2lf"; convert TORR; }
+Calibration (AI_500Torr, TORR) {
+  0, 0,
+  20000, 500
+}
+
