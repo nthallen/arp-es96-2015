@@ -2,7 +2,7 @@ csv hcleng_1 81
   0 Thcleng_1 %.3lf
   1 CPU_Pct 
   2 DACS_P 
-  3 DACS_PTRHS 
+  3 DACS_PTRHS %.0lf
   4 DACS_RHC 
   5 DACS_T1C 
   6 DACS_T2C 
@@ -15,7 +15,7 @@ csv hcleng_1 81
   13 IDPVCT 
   14 IDPVTSt 
   15 IDPV_P 
-  16 IDPV_PTRHS 
+  16 IDPV_PTRHS %.0lf
   17 IDPV_RHC 
   18 IDPV_T1C 
   19 IDPV_T2C 
@@ -25,7 +25,7 @@ csv hcleng_1 81
   23 ILH_T 
   24 ILPVCT 
   25 ILPV_P 
-  26 ILPV_PTRHS 
+  26 ILPV_PTRHS %.0lf
   27 ILPV_RHC 
   28 ILPV_T1C 
   29 ILPV_T2C 
@@ -46,18 +46,18 @@ csv hcleng_1 81
   44 ISk3T 
   45 QCLI_CS 
   46 QCLI_Stale 
-  47 QCLI_Wave 
+  47 QCLI_Wave %.0lf
   48 QCLI_err 
   49 QCLI_fifodep 
   50 QCLI_flash 
-  51 QCLI_mode 
-  52 QCLI_rw 
+  51 QCLI_mode %.0lf
+  52 QCLI_rw %.0lf
   53 QCLI_s 
   54 SSP_Flags 
   55 SSP_Num 
   56 SSP_SN 
   57 SSP_Stale 
-  58 SSP_Status 
+  58 SSP_Status %.0lf
   59 SSP_TS 
   60 SSP_T_FPGA 
   61 SSP_T_HtSink 
