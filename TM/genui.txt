@@ -16,7 +16,7 @@ HOMEDIR HCl_Data_Dir
   1 ILPVCT     LPV TControl
   1 ILPV_P     LPV P
   1 ILPV_RHC   LPV RH
-  1 ILPV_PTRHS LPV PTRHS
+  1 ILPV_PTRHS PTRH Status %.0lf
 
   1 ILTE7R7T   LPV LaserT
   1 ILTETSt    LPV TEC
@@ -33,7 +33,7 @@ HOMEDIR HCl_Data_Dir
   1 IDPVCT  DPV  TControl
   1 IDPVTSt DPV  TControl
   1 IDPV_P  DPV  P
-  1 IDPV_PTRHS DPV PTRHS
+  1 IDPV_PTRHS PTRH Status %.0lf
   1 IDPV_RHC DPV RH
   1 IDPV_T1C DPV T
   1 IDPV_T2C DPV T
@@ -55,9 +55,9 @@ HOMEDIR HCl_Data_Dir
   1 IPampT Temps SSP
 
 
-  1 QCLI_Wave QCLI Wave
+  1 QCLI_Wave QCLI Wave %.0lf
   1 SSP_Num   QCLI Scan
-  1 SSP_Status QCLI SSP
+  1 SSP_Status QCLI SSP %.0lf
   1 CAOVF1:SSP_Flags:0 QCLI Overflow
   1 CAOVF2:SSP_Flags:1 QCLI Overflow
   1 CAOVF3:SSP_Flags:2 QCLI Overflow
@@ -74,8 +74,8 @@ HOMEDIR HCl_Data_Dir
   1 QCLI_err    QCLIstat err
   1 QCLI_fifodep QCLIstat fifodep
   1 QCLI_flash   QCLIstat flash
-  1 QCLI_mode    QCLIstat mode
-  1 QCLI_rw      QCLIstat rw
+  1 QCLI_mode    QCLIstat mode %.0lf
+  1 QCLI_rw      QCLIstat rw %.0lf
 # 1 QCLI_CS
 # 1 QCLI_s
   1 QCLI_present:QCLI_CS:11 QCLIstat status
@@ -124,7 +124,7 @@ HOMEDIR HCl_Data_Dir
   1 vl_cpuT   DACS T
   
   1 DACS_P     DACS P
-  1 DACS_PTRHS DACS PTRHS
+  1 DACS_PTRHS PTRH Status %.0lf
   1 DACS_RHC   DACS RH
   1 DACS_T1C   DACS T
   1 DACS_T2C   DACS T

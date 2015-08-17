@@ -72,10 +72,10 @@ Cel {
   HBox { +-; Title: "Cell"; -+};
   TS4_T:     (TS4_T,7) C;
   TS5_T:     (TS5_T,7) C;
-  CelCT:  (ICelCT,7) C;
-  CelTSt: (ICelTSt,7) C;
-  CelP:   (ICelP,7) ;
-  CelPSt: (ICelPSt,7) ;
+  CelCT:  (ICelCT,7) V;
+  CelTSt: (ICelTSt,7) V;
+  CelP:   (ICelP,7) V;
+  CelPSt: (ICelPSt,7) V;
 }
   
 DPV {

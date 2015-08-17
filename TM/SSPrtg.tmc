@@ -16,3 +16,4 @@ ci_sendfcmd(2, "PhRTG Datum IRv_T %lu %.2lf %.2lf %.2lf %.2lf\n",
   itime(), convert(IRv1T), convert(IRv2T), convert(IRv3T), convert(IRv4T));
 ci_sendfcmd(2, "PhRTG Datum vl_bdT %lu %s\n", itime(), text(vl_bdT));
 ci_sendfcmd(2, "PhRTG Datum vl_cpuT %lu %s\n", itime(), text(vl_cpuT));
+ci_sendfcmd(2, "PhRTG Datum LTECCT %lu %s\n", itime(), text(ILTE7R7T));
