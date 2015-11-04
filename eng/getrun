@@ -9,6 +9,7 @@ gse=hcigse.arp.harvard.edu
 # gse=10.0.5.19
 relay=fugue.arp.harvard.edu
 RAW_Dir=RAW
+HCL_Dir=.
 use_relay=no
 HomeDir=/net/hclgse/home/hcl
 Exp=hcl
@@ -113,10 +114,12 @@ for run in $*; do
         if [ $Copy_SSP = yes ]; then
           [ -d $RAW_Dir ] || mkdir $RAW_Dir
           [ -d $RAW_Dir/$run$flt ] || mkdir $RAW_Dir/$run$flt
-        fi
-        if [ $Copy_SSP = yes ]; then
+          [ -d $HCL_Dir ] || mkdir $HCL_Dir
+          [ -d $HCL_Dir/$run$flt ] || mkdir $HCL_Dir/$run$flt
           do_tar $run SSP
         fi
+      else
+        echo "No run type specified for SSP copy"
       fi;;
     *) nl_error "Unrecognized option in second pass: '$run'";;
   esac
