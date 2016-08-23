@@ -74,7 +74,7 @@ Cel {
   TS5_T:     (TS5_T,7) C;
   CelCT:  (ICelCT,7) V;
   CelTSt: (ICelTSt,7) V;
-  CelP:   (ICelP,7) V;
+  CelP:   (ICelP,7) Torr;
   CelPSt: (ICelPSt,7) V;
 }
   

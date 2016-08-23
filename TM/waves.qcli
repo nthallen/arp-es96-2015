@@ -11,7 +11,7 @@ ICOS Waveform JPL53_3 {
   SampleRate = 100 MHz/100;
   Ncoadd = 900;
   Tz = 10%;
-  Ramp from 100 mA to 300 mA in 1 msec;
+  Ramp from 330 mA to 360 mA in 1 msec;
 }
 
 ICOS Waveform JPL53_4 {
@@ -25,12 +25,38 @@ ICOS Waveform JPL53_4a {
   SampleRate = 100 MHz/100;
   Ncoadd = 900;
   Tz = 10%;
-  Ramp from 350 mA to 400 mA in 1 msec;
+  Ramp from 150 mA to 350 mA in 2 msec;
 }
 
 ICOS Waveform JPL53_5 {
   SampleRate = 100 MHz/100;
   Ncoadd = 900;
   Tz = 10%;
-  Ramp from 300 mA to 500 mA in 1 msec;
+ Ramp from 300 mA to 500 mA in 1 msec;
+}
+
+ICOS Waveform JPL53_C {
+  SampleRate = 100 MHz/100;
+  Tz = 10 msec;
+  Iz = 350 mA;
+  dI/dt = 0 A/sec;
+}
+
+Ringdown Waveform RD_JPL58 {
+  SampleRate = 100 MHz/10;
+  Nsample = 350;
+  Toff = 50 msec;
+  Ton = 50 msec;
+  Tpre = 2 usec;
+  I = 330 mA to 360 mA in 1000 Steps;
+}
+
+Ringdown Waveform RD_JPL58_NC10 {
+  SampleRate = 100 MHz/10;
+  Nsample = 350;
+  NCoadd = 10;
+  Toff = 5 msec;
+  Ton = 5 msec;
+  Tpre = 2 usec;
+  I = 330 mA to 360 mA in 1000 Steps;
 }
