@@ -4,7 +4,6 @@ waves.tmc
 waves.m
 waves.log
 hclcol.cc
-hcl.pcm
 tm.dac
 hclcoloui.c
 hclcoloui.o
@@ -32,7 +31,7 @@ hcldispncoui.c
 hcldispncoui.o
 hcldispnc.o
 hclengextcdf.oui
-hclengext.tmc
+hclengcdf.tmc
 hclengext.cc
 hclengextoui.c
 hclengextoui.o
@@ -44,6 +43,8 @@ hclcltoui.o
 hclcltnc.o
 hclcltncoui.c
 hclcltncoui.o
+hcltbl.tmc.dep
+hcltblnc.tmc.dep
 *.err
 hclcol
 hclsrvr
