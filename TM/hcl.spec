@@ -38,6 +38,7 @@ cmdbase = qclis.cmd
 cmdbase = digio.cmd
 
 qclibase = waves.qcli
+swsbase = hcl.sws
 
 SCRIPT = interact Experiment.config digio.dccc
 TGTDIR = $(TGTNODE)/home/hcl

@@ -6,9 +6,9 @@ Effective Frame Dimensions:
   4 Rows 47 Columns
   4 rows/sec
   1504 bits/sec
-  Data:  1352 bits/sec  90 %
+  Data:  1360 bits/sec  90 %
   Synch: 128 bits/sec  9 %
-  Empty: 24 bits/sec  2 %
+  Empty: 16 bits/sec  1 %
 -------End of Frame Statistics-----
 
 
@@ -100,7 +100,8 @@ Effective Frame Dimensions:
 1/1 Hz 2 bytes Datum Sp8AI (4,3,34,2)
 1/1 Hz 2 bytes Datum SpAI9 (4,3,36,2)
 1/1 Hz 2 bytes Datum SSP_Stale (4,3,38,2)
-1/1 Hz 1 bytes Datum vl_bdT (4,3,40,1)
-1/1 Hz 1 bytes Datum vl_cpuT (4,3,41,1)
+1/1 Hz 1 bytes Datum SWStat (4,3,40,1)
+1/1 Hz 1 bytes Datum vl_bdT (4,3,41,1)
+1/1 Hz 1 bytes Datum vl_cpuT (4,3,42,1)
 -------End of PCM Definition-------
 

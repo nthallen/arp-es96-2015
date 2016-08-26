@@ -7,56 +7,188 @@ QCLIConfig Standard;
 Digitizer SSP;
 Prefix QCLI;
 
-ICOS Waveform JPL53_3 {
+# Wave I_250_280
+ICOS Waveform I_250_280 {
   SampleRate = 100 MHz/100;
-  Ncoadd = 900;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 250 mA to 280 mA in 1 msec;
+}
+
+# Wave I_260_290
+ICOS Waveform I_260_290 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 260 mA to 290 mA in 1 msec;
+}
+
+# Wave I_270_300
+ICOS Waveform I_270_300 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 270 mA to 300 mA in 1 msec;
+}
+
+# Wave I_280_310
+ICOS Waveform I_280_310 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 280 mA to 310 mA in 1 msec;
+}
+
+# Wave I_290_320
+ICOS Waveform I_290_320 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 290 mA to 320 mA in 1 msec;
+}
+
+# Wave I_300_330
+ICOS Waveform I_300_330 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 300 mA to 330 mA in 1 msec;
+}
+
+# Wave I_310_340
+ICOS Waveform I_310_340 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 310 mA to 340 mA in 1 msec;
+}
+
+# Wave I_320_350
+ICOS Waveform I_320_350 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 320 mA to 350 mA in 1 msec;
+}
+
+# Wave I_330_360
+ICOS Waveform I_330_360 {
+  SampleRate = 100 MHz/100;
+  Ncoadd = 5000;
   Tz = 10%;
   Ramp from 330 mA to 360 mA in 1 msec;
 }
 
-ICOS Waveform JPL53_4 {
+# Wave I_340_370
+ICOS Waveform I_340_370 {
   SampleRate = 100 MHz/100;
-  Ncoadd = 900;
+  Ncoadd = 5000;
   Tz = 10%;
-  Ramp from 250 mA to 360 mA in 1 msec;
+  Ramp from 340 mA to 370 mA in 1 msec;
 }
 
-ICOS Waveform JPL53_4a {
+# Wave I_350_380
+ICOS Waveform I_350_380 {
   SampleRate = 100 MHz/100;
-  Ncoadd = 900;
+  Ncoadd = 5000;
   Tz = 10%;
-  Ramp from 150 mA to 350 mA in 2 msec;
+  Ramp from 350 mA to 380 mA in 1 msec;
 }
 
-ICOS Waveform JPL53_5 {
+# Wave I_360_390
+ICOS Waveform I_360_390 {
   SampleRate = 100 MHz/100;
-  Ncoadd = 900;
+  Ncoadd = 5000;
   Tz = 10%;
- Ramp from 300 mA to 500 mA in 1 msec;
+  Ramp from 360 mA to 390 mA in 1 msec;
 }
 
-ICOS Waveform JPL53_C {
+# Wave I_370_400
+ICOS Waveform I_370_400 {
   SampleRate = 100 MHz/100;
-  Tz = 10 msec;
-  Iz = 350 mA;
-  dI/dt = 0 A/sec;
+  Ncoadd = 5000;
+  Tz = 10%;
+  Ramp from 370 mA to 400 mA in 1 msec;
 }
 
-Ringdown Waveform RD_JPL58 {
+# Ringdown Waveform RD_JPL58 {
+#   SampleRate = 100 MHz/10;
+#   Nsample = 350;
+#   Toff = 50 msec;
+#   Ton = 50 msec;
+#   Tpre = 2 usec;
+#   I = 330 mA to 360 mA in 1000 Steps;
+# }
+# 
+# Ringdown Waveform RD_JPL58_NC10 {
+#   SampleRate = 100 MHz/10;
+#   Nsample = 350;
+#   NCoadd = 10;
+#   Toff = 5 msec;
+#   Ton = 5 msec;
+#   Tpre = 2 usec;
+#   I = 330 mA to 360 mA in 1000 Steps;
+# }
+
+# This is just to settle my curiousity
+Ringdown Waveform RD_350_90us {
   SampleRate = 100 MHz/10;
-  Nsample = 350;
-  Toff = 50 msec;
-  Ton = 50 msec;
+  Nsample = 900;
+  NCoadd = 10000;
+  Toff = 50 usec;
+  Ton = 50 usec;
   Tpre = 2 usec;
-  I = 330 mA to 360 mA in 1000 Steps;
+  I = 350 mA;
 }
 
-Ringdown Waveform RD_JPL58_NC10 {
-  SampleRate = 100 MHz/10;
-  Nsample = 350;
-  NCoadd = 10;
-  Toff = 5 msec;
-  Ton = 5 msec;
+Ringdown Waveform RD_350_50MHz {
+  SampleRate = 100 MHz/2;
+  Nsample = 1000;
+  NCoadd = 10000;
+  Toff = 50 usec;
+  Ton = 50 usec;
   Tpre = 2 usec;
-  I = 330 mA to 360 mA in 1000 Steps;
+  I = 350 mA;
 }
+
+
+Ringdown Waveform RD_350_10MHz {
+  SampleRate = 100 MHz/10;
+  Nsample = 200;
+  NCoadd = 10000;
+  Toff = 50 usec;
+  Ton = 50 usec;
+  Tpre = 2 usec;
+  I = 350 mA;
+}
+
+Ringdown Waveform RD_360_10MHz {
+  SampleRate = 100 MHz/10;
+  Nsample = 200;
+  NCoadd = 10000;
+  Toff = 100 usec;
+  Ton = 100 usec;
+  Tpre = 2 usec;
+  I = 360 mA;
+}
+
+Ringdown Waveform RD_370_10MHz {
+  SampleRate = 100 MHz/10;
+  Nsample = 200;
+  NCoadd = 10000;
+  Toff = 100 usec;
+  Ton = 100 usec;
+  Tpre = 2 usec;
+  I = 370 mA;
+}
+
+Ringdown Waveform RD_380_10MHz {
+  SampleRate = 100 MHz/10;
+  Nsample = 200;
+  NCoadd = 10000;
+  Toff = 100 usec;
+  Ton = 100 usec;
+  Tpre = 2 usec;
+  I = 380 mA;
+}
+

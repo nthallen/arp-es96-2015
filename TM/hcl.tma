@@ -1,3 +1,94 @@
 State Init {
   > Telemetry Start
 }
+
+State Shutdown {
+  +1 > SSP Stop
+  +1 > QCLI Stop
+  +4 > Quit
+}
+
+State Survey {
+  +5 > Select Waveform I_250_280
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_260_290
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_270_300
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_280_310
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_290_320
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_300_330
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_310_340
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_320_350
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_330_360
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_340_370
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_350_380
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_360_390
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+
+  +5 > Select Waveform I_370_400
+  +2 > SSP Start
+  +1 > QCLI Run
+  +10:00 > SSP Stop
+  +1 > QCLI Stop
+}
+
+State Survey_Stop {
+  +1 > SSP Stop
+  +1 > QCLI Stop
+}

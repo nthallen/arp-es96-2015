@@ -1,0 +1,5 @@
+SW_Variable: SWStat
+
+SWS_SHUTDOWN    1      Shutdown: Validate Shutdown; break;
+SWS_SURVEY      10     Survey Start: Validate Survey; break;
+SWS_SURVEY_END  11     Survey End: Validate Survey_End; break;
