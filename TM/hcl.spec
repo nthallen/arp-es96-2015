@@ -45,7 +45,7 @@ TGTDIR = $(TGTNODE)/home/hcl
 
 hclcol : -lsubbus
 hclsrvr : -lsubbus
-hclalgo : hcl.tma
+hclalgo : hcl.tma hcl.sws
 hcldisp : temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc digio_conv.tmc \
           hcl.tbl SSPrtg.tmc /usr/local/share/oui/cic.oui
 hclengext : temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc hcleng.cdf

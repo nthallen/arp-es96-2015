@@ -1,4 +1,4 @@
-# Makefile Generated Fri Aug 26 13:19:08 EDT 2016
+# Makefile Generated Fri Aug 26 13:47:45 EDT 2016
 MNC=hcl
 SPECFILE=hcl.spec
 PCMFILE=hcl.pcm
@@ -19,7 +19,7 @@ SRC+=SWData_col.tmc -lsubbus /usr/local/share/huarp/root.cmd
 SRC+=/usr/local/share/huarp/DACS_AI.cmd
 SRC+=/usr/local/share/huarp/getcon.cmd
 SRC+=/usr/local/share/huarp/phrtg.cmd /usr/local/share/huarp/qcli.cmd
-SRC+=AO.cmd qclis.cmd digio.cmd waves.cmd SWData.cmd hcl.tma
+SRC+=AO.cmd qclis.cmd digio.cmd waves.cmd SWData.cmd hcl.tma hcl.sws
 SRC+=temps_conv.tmc qcli_conv.tmc PTRH_conv.tmc digio_conv.tmc
 SRC+=hcl.tbl SSPrtg.tmc /usr/local/share/oui/cic.oui hcleng.cdf
 SRC+=hcl.doit hcl.pcm
@@ -27,13 +27,13 @@ TOOL=hcl.spec Makefile
 SCRIPT=interact Experiment.config digio.dccc
 OBJ=waves.cmd waves.out waves.tmc waves.m waves.log hclcol.cc tm.dac
 OBJ+=hclcoloui.c hclcoloui.o hclcol.o ptrhm.o ptrhm_col.o hclcmd.cc
-OBJ+=hclcmd.dat hclsrvr.o hclsrvroui.c hclsrvroui.o hclalgoa.tmc
-OBJ+=hclalgo.cc hclalgooui.c hclalgooui.o hclalgo.o hcltbl.tmc
-OBJ+=hcldisp.cc hcldispoui.c hcldispoui.o hcldisp.o hcltblnc.tmc
-OBJ+=hcldispnc.cc hcldispncoui.c hcldispncoui.o hcldispnc.o
-OBJ+=hclengextcdf.oui hclengcdf.tmc hclengext.cc hclengextoui.c
-OBJ+=hclengextoui.o hclengext.o doit.dep hclclt.o hclcltoui.c
-OBJ+=hclcltoui.o hclcltnc.o hclcltncoui.c hclcltncoui.o
+OBJ+=hclcmd.dat hclsrvr.o hclsrvroui.c hclsrvroui.o hclsws.tma
+OBJ+=hclalgoa.tmc hclalgo.cc hclalgooui.c hclalgooui.o hclalgo.o
+OBJ+=hcltbl.tmc hcldisp.cc hcldispoui.c hcldispoui.o hcldisp.o
+OBJ+=hcltblnc.tmc hcldispnc.cc hcldispncoui.c hcldispncoui.o
+OBJ+=hcldispnc.o hclengextcdf.oui hclengcdf.tmc hclengext.cc
+OBJ+=hclengextoui.c hclengextoui.o hclengext.o doit.dep hclclt.o
+OBJ+=hclcltoui.c hclcltoui.o hclcltnc.o hclcltncoui.c hclcltncoui.o
 OBJ+=hcltbl.tmc.dep hcltblnc.tmc.dep
 TGT=hclcol hclsrvr hclalgo hcldisp hcldispnc hclengext doit hclclt
 TGT+=hclcltnc
@@ -155,9 +155,11 @@ hclsrvr.o : hclcmd.cc SWData.h
 hclsrvroui.c : $(OUIDIR)/cis.oui $(OUIDIR)/seteuid.oui $(OUIDIR)/subbus.oui $(OUIDIR)/msg.oui
 	$(OUI) $(OUIDIR)/cis.oui $(OUIDIR)/seteuid.oui $(OUIDIR)/subbus.oui $(OUIDIR)/msg.oui
 hclsrvroui.o : hclsrvroui.c SWData.h
-hclalgoa.tmc : hcl.tma hclsrvr
+hclsws.tma : hcl.sws
+	$(COMPILE.sws) hcl.sws
+hclalgoa.tmc : hcl.tma hclsws.tma hclsrvr
 	$(SERVER) ./hclsrvr
-	$(TMCALGO) -V "`./hclsrvr -R`" hcl.tma
+	$(TMCALGO) -V "`./hclsrvr -R`" hcl.tma hclsws.tma
 hclalgo.cc : types.tmc /usr/local/share/huarp/flttime.tmc AI.tmc AO.tmc temps.tmc PTRH.tmc /usr/local/share/huarp/vl_temp.tmc /usr/local/share/huarp/ebx11_temp.tmc /usr/local/share/huarp/cpu_usage.tmc /usr/local/share/huarp/freemem.tmc /usr/local/share/huarp/tmdf.tmc freememdef.tmc qcli.tmc TS_T_t_cal.tmc digio.tmc T30K75KU.tmc waves.tmc SWData.tmc hclalgoa.tmc VERSION
 	$(TMC) types.tmc /usr/local/share/huarp/flttime.tmc AI.tmc AO.tmc temps.tmc PTRH.tmc /usr/local/share/huarp/vl_temp.tmc /usr/local/share/huarp/ebx11_temp.tmc /usr/local/share/huarp/cpu_usage.tmc /usr/local/share/huarp/freemem.tmc /usr/local/share/huarp/tmdf.tmc freememdef.tmc qcli.tmc TS_T_t_cal.tmc digio.tmc T30K75KU.tmc waves.tmc SWData.tmc hclalgoa.tmc
 hclalgooui.c : $(OUIDIR)/tma.oui $(OUIDIR)/dc.oui $(OUIDIR)/msg.oui

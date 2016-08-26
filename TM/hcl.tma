@@ -88,7 +88,7 @@ State Survey {
   +1 > QCLI Stop
 }
 
-State Survey_Stop {
+State Survey_End {
   +1 > SSP Stop
   +1 > QCLI Stop
 }

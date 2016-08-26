@@ -15,6 +15,7 @@ hclcmd.dat
 hclsrvr.o
 hclsrvroui.c
 hclsrvroui.o
+hclsws.tma
 hclalgoa.tmc
 hclalgo.cc
 hclalgooui.c
